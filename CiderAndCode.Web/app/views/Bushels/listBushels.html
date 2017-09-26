@@ -1,0 +1,24 @@
+﻿<label>Listing of bushels</label>
+<div ng-model="bushel">
+
+  
+<ul>
+    <li ng-repeat="bushel in bushels">
+       
+       <div>Type {{bushel.Type}} </div> 
+       <div>Quantity {{ bushel.Quantity}} </div>
+
+        <div ng-switch="bushel.Ripe">
+            <div ng-switch-when='false'>Ripe: No</div>
+            <div ng-switch-default>Ripe: Yes</div>
+        </div>
+
+        <div ng-switch="bushel.Pressed">
+            <div ng-switch-when='false'>Pressed: No</div>
+            <div ng-switch-default>Pressed: Yes</div>
+        </div>
+        
+        <button ng-click="deleteBushel(bushel.Id)">Delete</button>
+    </li>
+</ul>
+</div>
