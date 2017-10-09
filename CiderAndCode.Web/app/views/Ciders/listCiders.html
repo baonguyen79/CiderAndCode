@@ -1,0 +1,16 @@
+﻿<div>Listing of ciders</div>
+<div ng-model="ciders">
+
+    <ul>
+        <li ng-repeat="cider in ciders">
+
+            <div>Type: {{cider.Type}} </div>
+            <div>Bushel Id: {{ cider.Bushel_id}} </div>
+            <div>Number of Gallons: {{cider.NumberOfGallons}}</div>
+            <div>Date Pressed: {{cider.DatePressed}}</div>           
+            
+        </li>
+    </ul>
+</div>
+
+ 

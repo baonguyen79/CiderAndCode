@@ -11,6 +11,16 @@ namespace CiderAndCode.Web.Controllers
     [RoutePrefix("api/cider")]
     public class CiderController : ApiController
     {
+        [HttpGet, Route("")]
+        public HttpResponseMessage GetAllCiders()
+        {
+            var db = new AppDbContext();
+
+            var ciders = db.Ciders;
+
+            return Request.CreateResponse(HttpStatusCode.OK, ciders);
+        }
+
         [Route(""), HttpPost]
         public HttpResponseMessage MakeCider(MakeCiderRequest makeCiderRequest)
         {
